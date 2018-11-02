@@ -4,8 +4,9 @@ let order = 3;
 let ngrams = {};
 let quoteMin = 10;
 let quoteMax = 120;
+let randomLength = getRandomQuoteLength();
 
-
+getGrams();
 markovText();
 
 function getGrams() {
@@ -20,9 +21,6 @@ function getGrams() {
 }
 
 function markovText() {
-	getRandomQuoteLength();
-	getGrams();
-	
 	let currentGram = text.substring(0, order);
 	let result = currentGram;
 
@@ -34,13 +32,14 @@ function markovText() {
 		currentGram = result.substring(len - 3, len);
 	}
 	
-	console.log(result);
+	// console.log(`${result}.`);
+	return `${result}.`;
 }
 
 function getRandomQuoteLength() {
 	let min = Math.ceil(quoteMin);
 	let max = Math.floor(quoteMax);
-	randomLength = Math.floor(Math.random() * (max - min + 1)) + min;
-	return randomLength;
+	return Math.floor(Math.random() * (max - min + 1)) + min;;
 }
 
+module.exports = markovText();

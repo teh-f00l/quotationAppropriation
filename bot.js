@@ -1,6 +1,7 @@
 require('dotenv').config();
 const Mastodon = require('mastodon-api');
 const fs = require('fs');
+const markov = require('./markov.js');
 
 console.log("Mastodon Bot starting...");
 
@@ -33,7 +34,7 @@ listener.on('message', msg => {
 
 // FUNCTIONS
 function onFollow(acct, id) {
-  let quote = `The time is not right for you to know yet.`;
+  let quote = markov;
   toot(`@${acct} - ${quote}`);
 }
 
