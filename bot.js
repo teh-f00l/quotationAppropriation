@@ -12,15 +12,35 @@ const M = new Mastodon({
   api_url: 'https://botsin.space/api/v1/', // optional, defaults to https://mastodon.social/api/v1/
 })
 
-toot();
-setInterval(toot, 24 * 60 * 60 * 1000);
+// USER EVENTS
+const listener = M.stream('streaming/user');
+listener.on('error', err => console.log(err));
+
+listener.on('message', msg => { 
+  // fs.writeFileSync(`data${new Date().getTime()}.json`, JSON.stringify(msg, null, 2));
+  // console.log(msg);
+
+  if (msg.event === 'notification') {
+    if (msg.data.type === 'follow') {
+      const acct = msg.data.account.acct;
+      onFollow(acct);
+    } else if (msg.data.type === 'mention') {
+
+    }
+  }
+});
 
 
-function toot() {
-  const num = Math.floor(Math.random() * 100);
+// FUNCTIONS
+function onFollow(acct, id) {
+  let quote = `The time is not right for you to know yet.`;
+  toot(`@${acct} - ${quote}`);
+}
+
+// POST MESSAGE
+function toot(content) {
   const params = {
-    spoiler_text: "The meaning of life is: ",
-    status: num
+    status: content,
   }
 
   M.post('statuses', params, (error, data) => {
