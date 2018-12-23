@@ -18,6 +18,13 @@ Then verify installation with:
 node --version
 ```
 
+### BeautifulSoup and lxml
+You will need BeautifulSoup and lxml:
+```
+$ pip install beautifulsoup4
+$ pip install lxml
+```
+
 ## Deployment
 
 No deployment process yet.
