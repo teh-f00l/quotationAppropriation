@@ -10,7 +10,7 @@ let beginnings = [];
 let getRandomQuoteLength = () => {
 	let min = Math.ceil(quoteMin);
 	let max = Math.floor(quoteMax);
-	return Math.floor(Math.random() * (max - min + 1)) + min;;
+	return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 // Split text into letters
