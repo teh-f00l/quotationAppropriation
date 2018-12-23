@@ -36,3 +36,7 @@ urllib.request.urlretrieve(img,'dTrump_img'+str(counter)+'.jpg')
 # url = raw_input("www.brainyquote.com")
 
 # r  = requests.get("https://" +url)
+
+quotes_file = open('sampleText.txt','w')
+quotes_file.write(book_text)
+quotes_file.close()
