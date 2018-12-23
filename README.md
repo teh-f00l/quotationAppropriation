@@ -44,6 +44,7 @@ No deployment process yet.
 ## Dependencies:
 * [Mastodon API](https://docs.joinmastodon.org/)
 * [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+* [lxml](https://lxml.de/)
 
 ## Authors
 * **Matilda Wysocki** - [teh-f00l](https://github.com/teh-f00l)
