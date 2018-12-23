@@ -1,6 +1,8 @@
 # Quotation Appropriation
 
-A mastodon bot taking the words of historical figures and aggregating them.
+A Mastodon bot taking the words of historical figures and aggregating them.
+
+[Demo](https://botsin.space/@QuotationAppropriation)
 
 ## Getting Started
 
@@ -18,11 +20,21 @@ Then verify installation with:
 node --version
 ```
 
-### BeautifulSoup and lxml
+#### BeautifulSoup and lxml
 You will need BeautifulSoup and lxml:
 ```
 $ pip install beautifulsoup4
 $ pip install lxml
+```
+
+### Installing
+
+#### Environment Variables
+Create .env file for Mastodon keys:
+```
+ACCESS_TOKEN
+CLIENT_SECRET
+CLIENT_KEY
 ```
 
 ## Deployment
