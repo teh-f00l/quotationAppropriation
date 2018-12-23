@@ -1,1 +1,4 @@
 # quotationAppropriation
+
+Dependencies:
+BeautifulSoup
